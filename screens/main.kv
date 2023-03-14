@@ -1,0 +1,79 @@
+ScreenManagement:
+    MainScreen:
+    HomeScreen:
+    AddDeviceScreen:
+    SettingsScreen:
+    DevicePage:
+    DeviceSettings:
+
+
+<UsefulToolbar>:
+    orientation: "horizontal"
+    size_hint_y: None
+    height: 50
+    padding: 10
+    spacing: 10
+    # canvas
+    canvas:
+        Color:
+            rgba: app.theme_cls.primary_color
+
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<MainScreen>:
+    name: 'main'
+    BoxLayout:
+        orientation: 'vertical'
+        Title:
+            # centre
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            text: "Welcome to the app!\n Click the button to continue!"
+
+
+        UsefulToolbar:
+            size_hint_x:1
+            MDIconButton:
+                size_hint_x: 1
+                size_hint_y: 1
+                icon: 'home'
+                on_release: root.manager.current = 'home'
+
+<HomeScreen>:
+    name: 'home'
+    BoxLayout:
+        orientation: 'vertical'
+        Title:
+            text: 'Home'
+        UsefulToolbar:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: 50
+            padding: 10
+            spacing: 10
+            MDIconButton:
+                icon: 'plus'
+                on_release: root.manager.current: 'settings'
+            MDIconButton:
+                icon: 'home'
+            MDIconButton:
+                icon: 'cog'
+
+
+<AddDeviceScreen>:
+    name: 'add_device'
+
+<SettingsScreen>:
+    name: "settings"
+
+<DevicePage>:
+    name: 'device_page'
+
+<DeviceSettings>
+    name: 'device_settings'
+
+
+
+
+
